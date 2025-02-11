@@ -5,6 +5,7 @@
 //  Created by summercat on 1/30/25.
 //
 
+import BlockUser
 import MatchingDetail
 import SignUp
 import Home
@@ -83,6 +84,9 @@ public struct Coordinator {
         getValuePicksUseCase: getValuePicksUseCase,
         createProfileUseCase: createProfileUseCase
       )
+      
+    case .blockUser:
+      BlockUserViewFactory.createBlockUserView()
     }
   }
 }
