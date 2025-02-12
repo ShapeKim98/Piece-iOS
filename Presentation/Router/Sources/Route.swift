@@ -7,6 +7,7 @@
 
 public enum Route: Hashable {
   case home
+  case onboarding
   case AvoidContactsGuide
   case termsAgreement
   case matchProfileBasic

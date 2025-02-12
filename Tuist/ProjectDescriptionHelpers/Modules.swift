@@ -76,6 +76,7 @@ public extension Modules {
     case DesignSystem
     case Router
     case Coordinator
+    case Onboarding
     case Login
     case SignUp
     case Home

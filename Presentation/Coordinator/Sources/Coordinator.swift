@@ -7,12 +7,12 @@
 
 import EditValuePick
 import MatchingDetail
-import SignUp
 import Home
-import SignUp
+import Onboarding
 import PCNetwork
 import Repository
 import Router
+import SignUp
 import SwiftUI
 import UseCases
 
@@ -33,6 +33,9 @@ public struct Coordinator {
       let getProfileUseCase = UseCaseFactory.createGetProfileUseCase(repository: profileRepository)
       HomeViewFactory.createHomeView(getProfileUseCase: getProfileUseCase)
       
+    case .onboarding:
+      OnboardingViewFactory.createOnboardingView()
+      
     case .matchProfileBasic:
       let matchesRepository = repositoryFactory.createMatchesRepository()
       let getMatchProfileBasicUseCase = UseCaseFactory.createGetMatchProfileBasicUseCase(repository: matchesRepository)
@@ -40,6 +43,7 @@ public struct Coordinator {
         getMatchProfileBasicUseCase: getMatchProfileBasicUseCase,
         getMatchPhotoUseCase: getMatchPhotoUseCase
       )
+      
     case .matchValueTalk:
       let matchesRepository = repositoryFactory.createMatchesRepository()
       let getMatchValueTalkUseCase = UseCaseFactory.createGetMatchValueTalkUseCase(repository: matchesRepository)
@@ -47,6 +51,7 @@ public struct Coordinator {
         getMatchValueTalkUseCase: getMatchValueTalkUseCase,
         getMatchPhotoUseCase: getMatchPhotoUseCase
       )
+      
     case .matchValuePick:
       let matchesRepository = repositoryFactory.createMatchesRepository()
       let getMatchValuePickUseCase = UseCaseFactory.createGetMatchValuePickUseCase(repository: matchesRepository)
